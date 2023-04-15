@@ -1,13 +1,19 @@
 from datetime import datetime,timedelta
-import time
-from util import closest_number
+import math
+
+def closest_number(n, m):
+    q = math.ceil(n / m) 
+    number = m * q
+    return number
 
 def last_day(d, day_name="sunday") -> datetime:
     days_of_week = ['sunday','monday','tuesday','wednesday',
                         'thursday','friday','saturday']
     target_day = days_of_week.index(day_name.lower())
     delta_day = target_day - d.isoweekday()
-    if delta_day >= 0: delta_day -= 7 # go back 7 days
+    if delta_day >= 0: 
+        delta_day -= 7 # go back 7 days
+
     return d + timedelta(days=delta_day)
 
 
@@ -32,6 +38,7 @@ def get_dates(word, letters, start_date) -> list[datetime]:
             for letter_pos in letter_arr:
                 pos = letter_pos + last_pos
                 letter_dates.append(start_date + timedelta(days=pos))
+                
             last_pos += (letter_arr[-1] + 7) 
 
     return letter_dates
