@@ -8,7 +8,7 @@ import traceback
 def create_file(dates) -> None:
     f = open("commit.sh", "w")
     file_content = "git add .\n"
-    for _ in range(7):
+    for _ in range(14):
         for date in dates:
             file_content += "GIT_AUTHOR_DATE=\"" + str(date) + "\" GIT_COMMITTER_DATE=\"" + str(date) + "\" git commit --allow-empty -m \"important work\" > /dev/null\n"
     
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="\tScript for writing text to your commit history calendar.\n\tWill write \"send nudes\" if -t (text) is omitted", 
         formatter_class=RawTextHelpFormatter)
-    parser.add_argument("-t", "--text", type=str, help="desired string to be created in the commit history calendar")
+    parser.add_argument("-t", "-m", "--text", "--message", type=str, help="desired string to be created in the commit history calendar")
     args = parser.parse_args()
 
     try:

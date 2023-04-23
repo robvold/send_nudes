@@ -19,12 +19,13 @@ def last_day(d, day_name="sunday") -> datetime:
 
 def find_start_date() -> datetime:
     date_today = datetime.today()
-    date_year_ago = date_today - timedelta(days=365)
+    date_year_ago = date_today - timedelta(days=358)
     sunday = last_day(date_year_ago, "sunday")
     return sunday
 
 
 def get_dates(word, letters, start_date) -> list[datetime]:
+    word = word.lower()
     letter_dates = []
     last_pos = 0
     
