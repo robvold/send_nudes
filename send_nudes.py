@@ -1,12 +1,14 @@
-from date_logic import *
+from date_logic import find_start_date, get_dates
 from letters import letters
 from argparse import RawTextHelpFormatter
 import argparse
 import traceback
 
 
-def create_file(dates) -> None:
-    f = open("commit.sh", "w")
+def create_file(file_n, dates) -> None:
+    file_name = file_n + ".sh"
+
+    f = open(file_name, "w")
     file_content = "git add .\n"
     for _ in range(14):
         for date in dates:
@@ -17,14 +19,20 @@ def create_file(dates) -> None:
     f.close()
     
 
-def run(calendar_word):
+def run(calendar_word) -> None:
     if not calendar_word:
         calendar_word = "send nudes"
+    shell_file_name = calendar_word.replace(" ", "_")
 
     start_date = find_start_date()
     dates_for_word = get_dates(calendar_word, letters, start_date)
-    create_file(dates_for_word)
-    print("Created shell file")
+    create_file(shell_file_name, dates_for_word)
+
+    output_message = (
+        f"Created shell file called {shell_file_name}.sh\n\n"
+        f"To print the text to the commit-calendar, move it to the desired repo, and run 'sh {shell_file_name}.sh'"
+    )
+    print(output_message)
  
 
 if __name__ == "__main__":

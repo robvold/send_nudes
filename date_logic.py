@@ -1,10 +1,11 @@
 from datetime import datetime,timedelta
 import math
 
-def closest_number(n, m):
+def closest_number(n, m) -> int:
     q = math.ceil(n / m) 
     number = m * q
     return number
+
 
 def last_day(d, day_name="sunday") -> datetime:
     days_of_week = ['sunday','monday','tuesday','wednesday',
