@@ -8,7 +8,7 @@ It works by creating a shell-script, that uses gits ability to make commits in t
 
 While testing the code you will probably generate a few `.sh`-files, you can use the provided `remove_shell_scripts.sh`-script to delete them all safely.
 
-**Note**: It's recomended to execute the generated script in a empty repo as it will be easier to make changes later on.
+**Important**: It's recommended to execute the generated script in a empty repo as it will be easier to make changes later on.
 
 <br>
 
@@ -24,6 +24,8 @@ Then you are able to use the tool with this general flow:
     a. Preferably an empty one
 3. Execute the shell-script
 
+Note: It may take some days before the text is visible in the commit calendar.
+
 ### Commands
 There are primarily two ways of running the code. You can make it print the default text, "send_nudes", by running: 
 ``` bash
@@ -31,7 +33,7 @@ python send_nudes.py
 ```
 You can also define the text with the `-t` or `-m` flag, like this:
 ``` bash
-python send_nudes.py -t "some text"
+python send_nudes.py -t "desired text"
 ```
 If you need help use the `-h` flag:
 ``` bash

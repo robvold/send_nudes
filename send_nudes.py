@@ -29,8 +29,12 @@ def run(calendar_word) -> None:
     create_file(shell_file_name, dates_for_word)
 
     output_message = (
-        f"Created shell file called {shell_file_name}.sh\n\n"
-        f"To print the text to the commit-calendar, move it to the desired repo, and run 'sh {shell_file_name}.sh'"
+        f"Created a shell file called {shell_file_name}.sh\n\n"
+        "Next steps:\n"
+        f"\t1. Move {shell_file_name}.sh to the desired repo\n"
+        "\t\ta. Preferably an empty one\n"
+        f"\t2. Run 'sh {shell_file_name}.sh'\n"
+        f"Note: It may take some days before the text is visible in the commit calendar"
     )
     print(output_message)
  
