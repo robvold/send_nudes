@@ -2,7 +2,7 @@
 
 _**send_nudes**_: A simple tool for writing text to your commit history calendar. 
 
-It works for both Github and Gitlab, Unix and Windows. It supports most of the ascii character set, including all the capital letters, and the most commonly used special characers. For a complete list, look at the `letters.py`-file. There is no limits to the length of the text printed.
+It works for both Github and Gitlab. It supports most of the ascii character set, including all the capital letters, and the most commonly used special characers. For a complete list, look at the `letters.py`-file. There is no limits to the length of the text printed.
 
 It works by creating a shell-script, that uses gits ability to make commits in the past.
 
@@ -25,7 +25,7 @@ Then you are able to use the tool with this general flow:
 3. Execute the shell-script
 
 ### Commands
-There are primarily two ways of running the code. You can make it print the default text, "send nudes", by running: 
+There are primarily two ways of running the code. You can make it print the default text, "send_nudes", by running: 
 ``` bash
 python send_nudes.py
 ```
