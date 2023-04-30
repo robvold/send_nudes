@@ -21,7 +21,7 @@ def create_file(file_n, dates) -> None:
 
 def run(calendar_word) -> None:
     if not calendar_word:
-        calendar_word = "send nudes"
+        calendar_word = "send_nudes"
     shell_file_name = calendar_word.replace(" ", "_")
 
     start_date = find_start_date()
